@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 // Import all components
 import { HeroComponent } from './components/hero/hero';
@@ -27,10 +28,13 @@ import { ThemeToggleComponent } from './shared/theme-toggle/theme-toggle';
     FooterComponent,
     HeaderComponent,
     ParticleBackgroundComponent,
-    ThemeToggleComponent  // Add this
+    ThemeToggleComponent
   ],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  styleUrls: ['./app.scss'],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ]
 })
 export class AppComponent {
   title = 'parul-portfolio';
