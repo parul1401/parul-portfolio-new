@@ -1,12 +1,37 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+// Import all components
+import { HeroComponent } from './components/hero/hero';
+import { AboutComponent } from './components/about/about';
+import { SkillsComponent } from './components/skills/skills';
+import { ExperienceComponent } from './components/experience/experience';
+import { ProjectsComponent } from './components/projects/projects';
+import { Contact } from './components/contact/contact';
+import { FooterComponent } from './components/footer/footer';
+import { HeaderComponent } from './shared/header/header';
+import { ParticleBackgroundComponent } from './shared/particle-background/particle-background';
+import { ThemeToggleComponent } from './shared/theme-toggle/theme-toggle';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CommonModule,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+    Contact,
+    FooterComponent,
+    HeaderComponent,
+    ParticleBackgroundComponent,
+    ThemeToggleComponent  // Add this
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('parul-portfolio');
+export class AppComponent {
+  title = 'parul-portfolio';
 }
